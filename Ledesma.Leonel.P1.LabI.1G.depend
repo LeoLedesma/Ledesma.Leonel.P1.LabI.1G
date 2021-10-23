@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1634939510 source:d:\utn programacion\utn programacion\primer cuatri\programacion i\clases y apuntes\ledesma.leonel.p1.labi.1g\destino.c
+
+1634941390 source:d:\utn programacion\utn programacion\primer cuatri\programacion i\clases y apuntes\ledesma.leonel.p1.labi.1g\aerolinea.c
+	<stdio.h>
+	<stdlib.h>
+	"aerolinea.h"
+
+1634940015 d:\utn programacion\utn programacion\primer cuatri\programacion i\clases y apuntes\ledesma.leonel.p1.labi.1g\aerolinea.h
+
+1634785471 source:d:\utn programacion\utn programacion\primer cuatri\programacion i\clases y apuntes\ledesma.leonel.p1.labi.1g\fecha.c
+	"fecha.h"
+
+1634785471 d:\utn programacion\utn programacion\primer cuatri\programacion i\clases y apuntes\ledesma.leonel.p1.labi.1g\fecha.h
+
