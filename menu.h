@@ -7,4 +7,4 @@
 #endif /* MENU_H_ */
 
 
-int menu();
+char menu();

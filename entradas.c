@@ -28,7 +28,7 @@ int getString(char mensaje[], char mensajeError[], char entrada[], int tam)
     return todoOk;
 }
 
-int getFloat(char mensaje[], char mensajeError[], float* entrada)
+int getFloat(char mensaje[], char mensajeError[], float* entrada )
 {
     int todoOk = -1;
     char auxString[100];
@@ -86,43 +86,21 @@ int getInt(char mensaje[], char mensajeError[], int* entrada)
 
 char getConfirmation (char mensaje[], char mensajeError[])
 {
-
+    int todoOk = 1;
     char caracterIngresado;
+    char error[] = {"ERROR. Solo puedes ingresar letras. Intenta nuevamente: " };
 
-    while (getString(mensaje, mensajeError, &caracterIngresado, 2 )|| (caracterIngresado != 's' &&  caracterIngresado != 'S' &&
-            caracterIngresado != 'n' && caracterIngresado != 'N'))
+    utn_getCaracter(&caracterIngresado, mensaje, error, 'A', 'z', 1);
+
+    while (caracterIngresado != 's' &&  caracterIngresado != 'S' &&
+            caracterIngresado != 'n' && caracterIngresado != 'N')
     {
-        printf("%s", mensajeError);
+        utn_getCaracter(&caracterIngresado, mensajeError, error, 'A', 'z', 1);
     }
+
+    caracterIngresado=tolower(caracterIngresado);
 
     return caracterIngresado;
-}
-
-int utn_getCaracter(char* pResultado, char mensaje[], char mensajeError[], char minimo, char maximo, int reintentos){
-    int retorno = 0;
-    char auxChar;
-
-    if (pResultado != NULL && mensaje != NULL && mensajeError != NULL && minimo <= maximo && reintentos >= 0){
-
-        do {
-            printf("%s", mensaje);
-            fflush(stdin);
-            scanf("%c", &auxChar);
-
-            if (auxChar >= minimo && auxChar <= maximo){
-                *pResultado = auxChar;
-                retorno = 1;//salio tod0 bien
-                break;
-
-            }
-            printf("%s", mensajeError);
-            reintentos--;
-
-        } while (reintentos >= 0);
-
-    }
-
-    return retorno;
 }
 
 //-------------VALIDACIONES
@@ -233,7 +211,32 @@ int toUpperFirstLetterPhrase(char string [], int len)
 }
 
 
+int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError, char minimo, char maximo, int reintentos){
+    int retorno = 0;
+    char auxChar;
 
+    if (pResultado != NULL && mensaje != NULL && mensajeError != NULL && minimo <= maximo && reintentos >= 0){
+
+        do {
+            printf("%s", mensaje);
+            fflush(stdin);
+            scanf("%c", &auxChar);
+
+            if (auxChar >= minimo && auxChar <= maximo){
+                *pResultado = auxChar;
+                retorno = 1;//salio tod0 bien
+                break;
+
+            }
+            printf("%s", mensajeError);
+            reintentos--;
+
+        } while (reintentos >= 0);
+
+    }
+
+    return retorno;
+}
 
 
 

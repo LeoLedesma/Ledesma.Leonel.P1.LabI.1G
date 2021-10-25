@@ -17,3 +17,8 @@ typedef struct
 }eDestino;
 
 #endif /* DESTINO_H_ */
+
+int cargarDescripcionDestinos(int id, eDestino destinos[], int tamD, char descripcionDestino[]);
+void mostrarDestino(eDestino unDestino, eDestino destinos[], int tamD);
+int mostrarDestinos(eDestino destinos[], int tamD);
+int validarIdDestino(int idRecibido, eDestino destinos[], int tamD);

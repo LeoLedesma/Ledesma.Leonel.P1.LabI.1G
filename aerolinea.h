@@ -18,3 +18,11 @@ typedef struct
 
 
 #endif /* AEROLINEA_H_ */
+
+int cargarDescripcionAerolinea(int id, eAerolinea aerolineas[], int tamA, char descripcionAerolinea[]);
+
+void mostrarAerolinea(eAerolinea unaAerolinea);
+
+int mostrarAerolineas(eAerolinea aerolineas[], int tamAE);
+
+int validarIdAerolinea(int idRecibido, eAerolinea aerolineas[], int tamAE);
