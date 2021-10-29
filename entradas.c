@@ -28,12 +28,12 @@ int getString(char mensaje[], char mensajeError[], char entrada[], int tam)
     return todoOk;
 }
 
-int getFloat(char mensaje[], char mensajeError[], float* entrada )
+int getFloat(char mensaje[], char mensajeError[], float* pEntrada )
 {
     int todoOk = -1;
     char auxString[100];
 
-    if(mensaje!=NULL && mensajeError!=NULL && entrada!=NULL)
+    if(mensaje!=NULL && mensajeError!=NULL && pEntrada!=NULL)
     {
         printf("%s", mensaje);
         fflush (stdin);
@@ -46,20 +46,20 @@ int getFloat(char mensaje[], char mensajeError[], float* entrada )
             gets(auxString);
         }
 
-        *entrada = atof(auxString);
+        *pEntrada = atof(auxString);
 
         todoOk=0;
     }
     return todoOk;
 }
 
-int getInt(char mensaje[], char mensajeError[], int* entrada)
+int getInt(char mensaje[], char mensajeError[], int* pEntrada)
 {
     int todoOk = 0;
     char auxString[100];
 
     fflush(stdin);
-    if(mensaje!=NULL && mensajeError!=NULL && entrada!=NULL)
+    if(mensaje!=NULL && mensajeError!=NULL && pEntrada!=NULL)
     {
         printf("%s", mensaje);
         fflush (stdin);
@@ -74,7 +74,7 @@ int getInt(char mensaje[], char mensajeError[], int* entrada)
 
         }
 
-        *entrada = atoi(auxString);
+        *pEntrada = atoi(auxString);
 
 
         todoOk=1;
@@ -86,7 +86,7 @@ int getInt(char mensaje[], char mensajeError[], int* entrada)
 
 char getConfirmation (char mensaje[], char mensajeError[])
 {
-    int todoOk = 1;
+
     char caracterIngresado;
     char error[] = {"ERROR. Solo puedes ingresar letras. Intenta nuevamente: " };
 
@@ -224,7 +224,7 @@ int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError, char mi
 
             if (auxChar >= minimo && auxChar <= maximo){
                 *pResultado = auxChar;
-                retorno = 1;//salio tod0 bien
+                retorno = 1; //salio todo bien
                 break;
 
             }

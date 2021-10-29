@@ -102,14 +102,13 @@
 	"destino.h"
 	"fecha.h"
 
-1634944451 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\aerolinea.c
-	<stdio.h>
-	<stdlib.h>
+1635298645 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\aerolinea.c
 	"aerolinea.h"
 
-1634944652 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\aerolinea.h
+1635364310 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\aerolinea.h
+	"entradas.h"
 
-1635018083 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\datawarehouse.c
+1635373227 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\datawarehouse.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -117,39 +116,41 @@
 	"avion.h"
 	"vuelo.h"
 
-1635017829 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\datawarehouse.h
+1635301354 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\datawarehouse.h
 	"avion.h"
 	"vuelo.h"
 
-1634948008 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\avion.h
+1635455495 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\avion.h
+	"tipo.h"
+	"entradas.h"
 	"aerolinea.h"
 	"tipo.h"
 
-1634944652 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\tipo.h
-
-1634949776 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\destino.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"destino.h"
-
-1634949717 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\destino.h
-
-1635013331 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\entradas.c
+1635297933 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\tipo.h
 	"entradas.h"
 
-1634945772 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\entradas.h
+1635297895 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\destino.c
+	"destino.h"
+
+1635297958 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\destino.h
+	"entradas.h"
+
+1635302490 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\entradas.c
+	"entradas.h"
+
+1635292142 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\entradas.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
-
-1634941995 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\fecha.c
-
-1635018036 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\main.c
-	<stdio.h>
-	<stdlib.h>
 	<ctype.h>
+
+1635297929 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\fecha.c
+	"fecha.h"
+
+1635373298 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\main.c
 	"menu.h"
+
+1635370119 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\menu.h
 	"aerolinea.h"
 	"avion.h"
 	"destino.h"
@@ -158,16 +159,11 @@
 	"vuelo.h"
 	"entradas.h"
 	"dataWarehouse.h"
-
-1634945968 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\menu.h
 
 1634942137 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\fecha.h
 
-1635017802 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\vuelo.h
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<ctype.h>
+1635298736 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\vuelo.h
+	"entradas.h"
 	"avion.h"
 	"aerolinea.h"
 	"tipo.h"
@@ -175,27 +171,14 @@
 	"destino.h"
 	"fecha.h"
 
-1634947759 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\menu.c
-	<stdio.h>
-	<stdlib.h>
-	<ctype.h>
-	"entradas.h"
+1635373340 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\menu.c
+	"menu.h"
 
-1634944379 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\tipo.c
-	<stdio.h>
-	<stdlib.h>
+1635299396 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\tipo.c
 	"tipo.h"
 
-1634950185 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\vuelo.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
+1635366391 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\vuelo.c
 	"vuelo.h"
-	"avion.h"
-	"aerolinea.h"
-	"tipo.h"
-	"entradas.h"
-	"destino.h"
 
 1635013379 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\avion.c
 	<stdio.h>
@@ -207,35 +190,32 @@
 	"tipo.h"
 	"entradas.h"
 
-1634944451 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\aerolinea.c
-	<stdio.h>
-	<stdlib.h>
+1635298645 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\aerolinea.c
 	"aerolinea.h"
 
-1634944652 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\aerolinea.h
+1635364310 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\aerolinea.h
+	"entradas.h"
 
-1635013379 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\avion.c
+1635386758 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\avion.c
+	"avion.h"
+	"aerolinea.h"
+	"tipo.h"
+
+1635386953 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\avion.h
+	"entradas.h"
+	"aerolinea.h"
+	"tipo.h"
+
+1635297933 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\tipo.h
+	"entradas.h"
+
+1635292142 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\entradas.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
-	"avion.h"
-	"aerolinea.h"
-	"tipo.h"
-	"entradas.h"
 
-1634948008 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\avion.h
-	"aerolinea.h"
-	"tipo.h"
-
-1634944652 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\tipo.h
-
-1634945772 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\entradas.h
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-
-1635018083 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\datawarehouse.c
+1635373227 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\datawarehouse.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -243,15 +223,12 @@
 	"avion.h"
 	"vuelo.h"
 
-1635017829 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\datawarehouse.h
+1635301354 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\datawarehouse.h
 	"avion.h"
 	"vuelo.h"
 
-1635017802 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\vuelo.h
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<ctype.h>
+1635298736 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\vuelo.h
+	"entradas.h"
 	"avion.h"
 	"aerolinea.h"
 	"tipo.h"
@@ -259,26 +236,24 @@
 	"destino.h"
 	"fecha.h"
 
-1634949717 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\destino.h
+1635297958 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\destino.h
+	"entradas.h"
 
 1634942137 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\fecha.h
 
-1634949776 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\destino.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
+1635297895 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\destino.c
 	"destino.h"
 
-1635013331 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\entradas.c
+1635302490 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\entradas.c
 	"entradas.h"
 
-1634941995 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\fecha.c
+1635297929 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\fecha.c
+	"fecha.h"
 
-1635018098 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\main.c
-	<stdio.h>
-	<stdlib.h>
-	<ctype.h>
+1635373298 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\main.c
 	"menu.h"
+
+1635370119 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\menu.h
 	"aerolinea.h"
 	"avion.h"
 	"destino.h"
@@ -288,27 +263,191 @@
 	"entradas.h"
 	"dataWarehouse.h"
 
-1634945968 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\menu.h
+1635373340 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\menu.c
+	"menu.h"
 
-1634947759 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\menu.c
-	<stdio.h>
-	<stdlib.h>
-	<ctype.h>
-	"entradas.h"
-
-1634944379 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\tipo.c
-	<stdio.h>
-	<stdlib.h>
+1635299396 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\tipo.c
 	"tipo.h"
 
-1634950185 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\vuelo.c
+1635366391 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g\vuelo.c
+	"vuelo.h"
+
+1635472362 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\aerolinea.c
+	"aerolinea.h"
+
+1635364310 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\aerolinea.h
+	"entradas.h"
+
+1635461889 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\entradas.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	<ctype.h>
+
+1635473709 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\avion.c
+	"avion.h"
+
+1635472520 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\avion.h
+	"tipo.h"
+	"entradas.h"
+	"aerolinea.h"
+	"tipo.h"
+	"cliente.h"
+
+1635297933 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\tipo.h
+	"entradas.h"
+
+1635297895 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\destino.c
+	"destino.h"
+
+1635297958 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\destino.h
+	"entradas.h"
+
+1635302490 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\entradas.c
+	"entradas.h"
+
+1635297929 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\fecha.c
+	"fecha.h"
+
+1634942137 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\fecha.h
+
+1635461889 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\main.c
+	"menu.h"
+
+1635463147 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\menu.h
+	"aerolinea.h"
+	"avion.h"
+	"destino.h"
+	"fecha.h"
+	"tipo.h"
 	"vuelo.h"
+	"cliente.h"
+	"entradas.h"
+	"dataWarehouse.h"
+
+1635298736 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\vuelo.h
+	"entradas.h"
 	"avion.h"
 	"aerolinea.h"
 	"tipo.h"
 	"entradas.h"
 	"destino.h"
+	"fecha.h"
+
+1635458152 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\datawarehouse.h
+	"avion.h"
+	"vuelo.h"
+
+1635473709 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\menu.c
+	"menu.h"
+
+1635299396 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\tipo.c
+	"tipo.h"
+
+1635366391 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\vuelo.c
+	"vuelo.h"
+
+1635463217 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\datawarehouse.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"dataWarehouse.h"
+
+1635458152 source:c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\cliente.c
+	"cliente.h"
+
+1635461889 c:\users\micaela\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\cliente.h
+
+1635539530 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\aerolinea.c
+	"aerolinea.h"
+
+1635539523 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\aerolinea.h
+	"entradas.h"
+
+1635540209 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\entradas.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1635458152 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\cliente.c
+	"cliente.h"
+
+1635461889 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\cliente.h
+
+1635549818 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\datawarehouse.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"dataWarehouse.h"
+
+1635539758 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\datawarehouse.h
+	"avion.h"
+	"vuelo.h"
+
+1635549871 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\avion.h
+	"tipo.h"
+	"entradas.h"
+	"aerolinea.h"
+	"tipo.h"
+	"piloto.h"
+
+1635541331 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\tipo.h
+	"entradas.h"
+
+1635549369 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\vuelo.h
+	"entradas.h"
+	"avion.h"
+	"aerolinea.h"
+	"tipo.h"
+	"entradas.h"
+	"destino.h"
+	"fecha.h"
+	"piloto.h"
+
+1635541331 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\destino.h
+	"entradas.h"
+
+1635542684 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\fecha.h
+	"entradas.h"
+
+1635538965 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\destino.c
+	"destino.h"
+
+1635539611 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\entradas.c
+	"entradas.h"
+
+1635542708 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\fecha.c
+	"fecha.h"
+
+1635544687 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\main.c
+	"menu.h"
+
+1635549903 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\menu.h
+	"aerolinea.h"
+	"avion.h"
+	"destino.h"
+	"fecha.h"
+	"tipo.h"
+	"vuelo.h"
+	"entradas.h"
+	"dataWarehouse.h"
+
+1635549945 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\menu.c
+	"menu.h"
+
+1635535451 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\tipo.c
+	"tipo.h"
+
+1635549903 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\vuelo.c
+	"vuelo.h"
+
+1635549654 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\avion.c
+	"avion.h"
+
+1635544339 source:c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\piloto.c
+	"piloto.h"
+
+1635544500 c:\users\leonel\onedrive\escritorio\utn programacion\ledesma.leonel.p1.labi.1g - copia\piloto.h
+	"entradas.h"
 

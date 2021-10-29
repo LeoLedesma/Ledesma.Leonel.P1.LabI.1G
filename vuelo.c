@@ -1,12 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "vuelo.h"
-#include "avion.h"
-#include "aerolinea.h"
-#include "tipo.h"
-#include "entradas.h"
-#include "destino.h"
+
 
 #define TRUE 1
 #define FALSE 0
@@ -52,14 +45,15 @@ int buscarLibreVuelo(eVuelo vuelos[], int tamV)
 }
 
 
-int altaVuelo(eVuelo vuelos[], int tamV, eAvion aviones[], int tamAV, eTipo tipos [], int tamT, eAerolinea aerolineas[], int tamAE, eDestino destinos[], int tamD, int* pIdVuelo)
+int altaVuelo(eVuelo vuelos[], int tamV, eAvion aviones[], int tamAv, eTipo tipos [], int tamT, eAerolinea aerolineas[], int tamAe, eDestino destinos[], int tamD, int* pIdVuelo, ePiloto pilotos[], int tamP)
 {
     int todoOk=0;
     int indice;
+    int fechaValida;
 
     eVuelo unVuelo;
 
-    if(vuelos!=NULL && tamV>0 &&  aviones!=NULL &&  tamAV>0 && tipos!=NULL && tamT>0 && aerolineas!=NULL && tamAE>0 && destinos!=NULL && tamD>0)
+    if(vuelos!=NULL && tamV>0 &&  aviones!=NULL &&  tamAv>0 && tipos!=NULL && tamT>0 && aerolineas!=NULL && tamAe>0 && destinos!=NULL && tamD>0)
     {
         indice = buscarLibreVuelo(vuelos, tamV);
 
@@ -74,13 +68,13 @@ int altaVuelo(eVuelo vuelos[], int tamV, eAvion aviones[], int tamAV, eTipo tipo
             unVuelo.id = *pIdVuelo;
             (*pIdVuelo)++;
 
-            mostrarAviones(aviones, tamAV, aerolineas, tamAE, tipos, tamT);
+            mostrarAviones(aviones, tamAv, aerolineas, tamAe, tipos, tamT, pilotos, tamP);
 
             getInt("\nIngrese el id del avion a iniciar el vuelo: ",
                    "ERROR. Ingrese el id del avion a iniciar el vuelo: (solo numeros) ",
                    &unVuelo.idAvion);
 
-            while (buscarAvionId(aviones, tamAV, unVuelo.idAvion) == -1)
+            while (buscarAvionId(aviones, tamAv, unVuelo.idAvion) == -1)
             {
 
                 getInt("\nERROR ID INVALIDA. Ingrese el id del avion a iniciar el vuelo: ",
@@ -101,62 +95,39 @@ int altaVuelo(eVuelo vuelos[], int tamV, eAvion aviones[], int tamAV, eTipo tipo
                         &unVuelo.idDestino);
             }
 
-            getInt("Ingrese dia: ", "ERROR: Ingrese dia: (solo numeros)",
-                   &unVuelo.fecha.dia);
-            while (unVuelo.fecha.dia < 1 || unVuelo.fecha.dia > 31)
+            fechaValida = pedirFecha(&unVuelo.fecha);
+
+            while(!fechaValida)
             {
-                getInt("ERROR. Ingrese dia valido: ",
-                       "ERROR: Ingrese dia valido: (solo numeros)",
-                       &unVuelo.fecha.dia);
-            }
-            getInt("Ingrese mes: ", "ERROR: Ingrese mes: (solo numeros)",
-                   &unVuelo.fecha.mes);
-            while (unVuelo.fecha.mes < 1 || unVuelo.fecha.mes > 12)
-            {
-                getInt("ERROR. Ingrese mes valido: ",
-                       "ERROR: Ingrese mes valido: (solo numeros)",
-                       &unVuelo.fecha.mes);
-            }
-            getInt("Ingrese anio: ", "ERROR: Ingrese anio: (solo numeros)",
-                   &unVuelo.fecha.anio);
-            while (unVuelo.fecha.anio < 0 || unVuelo.fecha.anio > 9999)
-            {
-                getInt("ERROR. Ingrese anio valido: ",
-                       "ERROR: Ingrese anio valido: (solo numeros)",
-                       &unVuelo.fecha.anio);
+                printf("Fecha invalida! Intente nuevamente \n");
+                fechaValida = pedirFecha(&unVuelo.fecha);
             }
 
-            unVuelo.isEmpty=FALSE;
-            vuelos[indice] = unVuelo;
-            todoOk=1;
-            printf("Vuelo cargado con exito!!\n");
+                unVuelo.isEmpty=FALSE;
+                vuelos[indice] = unVuelo;
+                todoOk=1;
+                printf("Vuelo cargado con exito!!\n");
+
+
 
         }
 
-
-
-
-
-
-
     }
-
-
-
-
-
     return todoOk;
 }
 
-void mostrarVuelo(eVuelo unVuelo, eAvion aviones[], int  tamAV, eDestino destinos[], int tamD)
+void mostrarVuelo(eVuelo unVuelo, eAvion aviones[], int  tamAv, eDestino destinos[], int tamD, eAerolinea aerolineas [], int tamAe)
 {
-    char descripcionDestino[20];
+    char descripcionDestino[26];
+    char descripcionAerolinea[21];
 
+    cargarDescripcionAerolineaAvion(aviones, tamAv, unVuelo.idAvion, descripcionAerolinea, aerolineas, tamAe);
     cargarDescripcionDestinos(unVuelo.idDestino, destinos, tamD, descripcionDestino);
 
-    printf("%4d       %4d   %10s   %02d/%02d/%04d\n",
+    printf("%4d       %4d       %-10s   %-10s   %02d/%02d/%04d\n",
            unVuelo.id,
            unVuelo.idAvion,
+           descripcionAerolinea,
            descripcionDestino,
            unVuelo.fecha.dia,
            unVuelo.fecha.mes,
@@ -165,39 +136,246 @@ void mostrarVuelo(eVuelo unVuelo, eAvion aviones[], int  tamAV, eDestino destino
 
 }
 
-int mostrarVuelos(eVuelo vuelos[], int tamV, eAvion aviones[], int  tamAV, eDestino destinos[], int tamD)
+int mostrarVuelos(eVuelo vuelos[], int tamV, eAvion aviones[], int  tamAv, eDestino destinos[], int tamD, eAerolinea aerolineas [], int tamAe)
 {
     int todoOk=0;
-    if(vuelos!=NULL && tamV>0 &&  aviones!=NULL &&  tamAV>0 && destinos!=NULL && tamD>0)
+    if(vuelos!=NULL && tamV>0 &&  aviones!=NULL &&  tamAv>0 && destinos!=NULL && tamD>0)
     {
-        printf("          *** Vuelos ***\n");
-        printf("------------------------------------------\n");
-        printf("Id Vuelo   Id avion   Destino   Fecha \n");
-
-        printf("------------------------------------------\n");
+        printf("                 *** Vuelos ***\n");
+        printf("-------------------------------------------------------------\n");
+        printf("Id Vuelo   Id avion   Aerolinea    Destino         Fecha \n");
+        printf("--------------------------------------------------------------\n");
         for (int i = 0; i<tamV; i++)
         {
             todoOk=1;
 
             if(vuelos[i].isEmpty==FALSE)
             {
-                mostrarVuelo(vuelos[i],  aviones,  tamAV,  destinos, tamD);
+                mostrarVuelo(vuelos[i],  aviones,  tamAv,  destinos, tamD, aerolineas, tamAe);
+
+            }
+        }
+    }
+
+
+    return todoOk;
+}
+
+void graficoListaVuelos()
+{
+    printf("-------------------------------------------------------------\n");
+    printf("Id Vuelo   Id avion   Aerolinea    Destino         Fecha \n");
+    printf("--------------------------------------------------------------\n");
+
+
+
+}
+
+//--------- informes
+
+int mostrarVuelosAvion(eVuelo vuelos[], int tamV, eAvion aviones[], int tamAv, eAerolinea aerolineas[], int tamAe, eTipo tipos[], int tamT, eDestino destinos[], int tamD, ePiloto pilotos[], int tamP)
+{
+    int todoOk = 0;
+    int idIngresado;
+    int intentos=3;
+
+    if(aviones!=NULL && tamAv>0 && aerolineas!=NULL && tamAe>0 && tipos!=NULL && tamT>0 && vuelos!=NULL && tamV>0 && destinos!=NULL && tamD>0 && pilotos!=NULL && tamP>0)
+    {
+        system("cls");
+        todoOk=1;
+
+        mostrarAviones(aviones, tamAv, aerolineas, tamAe, tipos, tamT, pilotos, tamD);
+
+        getInt("Por favor seleccione el ID del avion que quiere mostrar: ", "ERROR. Seleccione el ID del avion que quiere mostrar: (sin numeros)", &idIngresado);
+
+        while(buscarAvionId(aviones, tamAv, idIngresado)==-1 && intentos>0)
+        {
+            printf("ERROR. ID invalido, le quedan %d intentos. ", intentos);
+            intentos--;
+            getInt("Por favor seleccione el ID del avion que quiere mostrar: ", "ERROR. Seleccione el ID del avion que quiere mostrar: (sin numeros)", &idIngresado);
+        }
+
+        if(intentos>0)
+        {
+            printf("   *** Vuelos del avion con id: %d ***\n", idIngresado);
+            graficoListaVuelos();
+            for(int i = 0; i<tamV; i++)
+            {
+                if(!vuelos[i].isEmpty && vuelos[i].idAvion==idIngresado)
+                {
+                    mostrarVuelo(vuelos[i], aviones, tamAv, destinos, tamD, aerolineas, tamAe);
+
+                }
 
             }
 
+        }
+    }
 
+
+    return todoOk;
+}
+
+
+
+int mostrarSumaViajesAvion(eVuelo vuelos[], int tamV, eAvion aviones[], int tamAv, eAerolinea aerolineas[], int tamAe, eTipo tipos[], int tamT, eDestino destinos[], int tamD, ePiloto pilotos[], int tamP)
+{
+    int todoOk = 0;
+    float acumuladoPrecio=0;
+    int intentos=3;
+    int idIngresado;
+    int flag=0;
+
+
+    if(aviones!=NULL && tamAv>0 && aerolineas!=NULL && tamAe>0 && tipos!=NULL && tamT>0 && vuelos!=NULL && tamV>0 && destinos!=NULL && tamD>0 && pilotos!=NULL && tamP>0)
+    {
+        system("cls");
+        todoOk=1;
+
+        mostrarAviones(aviones, tamAv, aerolineas, tamAe, tipos, tamT, pilotos, tamP);
+
+        getInt("Por favor seleccione el ID del avion que quiere mostrar: ", "ERROR. Seleccione el ID del avion que quiere mostrar: (sin numeros)", &idIngresado);
+
+        while(buscarAvionId(aviones, tamAv, idIngresado)==-1 && intentos>0)
+        {
+            printf("ERROR. ID invalido, le quedan %d intentos. ", intentos);
+            intentos--;
+            getInt("Por favor seleccione el ID del avion que quiere mostrar: ", "ERROR. Seleccione el ID del avion que quiere mostrar: (sin numeros)", &idIngresado);
+        }
+
+        if(intentos>0)
+        {
+
+            for(int i = 0; i<tamV; i++)
+            {
+                if(!vuelos[i].isEmpty && vuelos[i].idAvion==idIngresado)
+                {
+
+                    acumuladoPrecio+=cargarPrecioDestino(vuelos[i].idDestino, destinos, tamD);
+                    flag=1;
+                }
+            }
+
+            if(flag)
+            {
+                printf("El dinero ganado total del avion fue: %.2f.\n", acumuladoPrecio);
+            }
+
+        }
+
+
+
+    }
+
+
+
+    return todoOk;
+}
+
+int mostrarVueloDeUnDestino(eDestino destinos[], int tamD, eVuelo vuelos[], int tamV, eAvion aviones[], int tamAv, eAerolinea aerolineas[], int tamAe, ePiloto pilotos[], int tamP)
+{
+    int todoOk=0;
+    int intentos=3;
+    int idIngresado;
+    char descripcionDestino[26];
+    int flag=0;
+    if(aviones!=NULL && tamAv>0 && aerolineas!=NULL && tamAe>0 && vuelos!=NULL && tamV>0 && destinos!=NULL && tamD>0 && pilotos!=NULL && tamP>0)
+    {
+        todoOk=1;
+        system("cls");
+
+
+        mostrarDestinos(destinos, tamD);
+
+        getInt("Por favor seleccione el ID del destino que quiere mostrar: ", "ERROR. Seleccione el ID del destino que quiere mostrar: (sin numeros)", &idIngresado);
+
+        while(!validarIdDestino(idIngresado, destinos, tamD) && intentos>0)
+        {
+            printf("ERROR. ID invalido, le quedan %d intentos. ", intentos);
+            intentos--;
+            getInt("Por favor seleccione el ID del destino que quiere mostrar: ", "ERROR. Seleccione el ID del destino que quiere mostrar: (sin numeros)", &idIngresado);
+        }
+
+        if(intentos>0)
+        {
+            system("cls");
+            cargarDescripcionDestinos(idIngresado, destinos, tamD, descripcionDestino);
+            printf("*** Vuelos a %s *** \n", descripcionDestino);
+            graficoListaVuelos();
+            for(int i=0; i<tamV; i++)
+            {
+                if(!vuelos[i].isEmpty && vuelos[i].idDestino==idIngresado)
+                {
+
+                    mostrarVuelo(vuelos[i], aviones, tamAv, destinos, tamD, aerolineas, tamAe);
+                    flag=1;
+                }
+
+
+
+            }
+
+            if(!flag)
+            {
+                system("cls");
+                printf("No hay vuelos a %s registrados.\n", descripcionDestino);
+
+            }
 
 
         }
 
 
 
+    }
+    return todoOk;
+}
+
+int viajesEnUnaFecha(eDestino destinos[], int tamD, eVuelo vuelos[], int tamV, eAvion aviones[], int tamAv, eAerolinea aerolineas[], int tamAe, ePiloto pilotos[], int tamP)
+{
+    int todoOk=0;
+    eFecha unaFecha;
+    int flag=0;
+    int fechaValida;
+
+    if(aviones!=NULL && tamAv>0 && aerolineas!=NULL && tamAe>0 && vuelos!=NULL && tamV>0 && destinos!=NULL && tamD>0 && pilotos!=NULL && tamP>0)
+    {
+        printf("ingrese una fecha para mostrar los viajes: \n");
+
+        fechaValida = pedirFecha(&unaFecha);
+
+        while(!fechaValida)
+        {
+            printf("Fecha invalida! Intente nuevamente \n");
+            fechaValida = pedirFecha(&unaFecha);
+        }
+
+            system("cls");
+            printf("  *** Vuelos del %2d/%2d/%2d ***\n", unaFecha.dia, unaFecha.mes, unaFecha.anio);
+            graficoListaVuelos();
+            for(int i=0; i<tamV; i++)
+            {
+                if(!vuelos[i].isEmpty && vuelos[i].fecha.dia==unaFecha.dia &&
+                        vuelos[i].fecha.mes==unaFecha.mes &&
+                        vuelos[i].fecha.anio == unaFecha.anio)
+                {
+                    mostrarVuelo(vuelos[i], aviones, tamAv, destinos, tamD, aerolineas, tamAe);
+                    flag=1;
+                }
+
+
+
+            }
+
+            if(!flag)
+            {
+                printf("No hay vuelos en esa fecha.\n");
+            }
 
 
 
 
     }
-
 
     return todoOk;
 }

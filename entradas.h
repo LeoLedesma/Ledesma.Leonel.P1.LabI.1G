@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 
 #define TRUE 1
@@ -20,7 +21,7 @@
 /// \param mensaje Mensaje de pedido de ingreso.
 /// \param mensajeError Mensaje de error de pedido.
 /// \param entrada Puntero a la direccion donde se requiere guardar la entrada.
-/// \param tam tamaño maximo de la entrada.
+/// \param tam tamanio maximo de la entrada.
 /// \return retorna (-1) si hubo un error o (0) si esta ok.
 int getString(char mensaje[], char mensajeError[], char entrada[], int tam);
 
@@ -31,7 +32,7 @@ int getString(char mensaje[], char mensajeError[], char entrada[], int tam);
 /// \param mensajeError Mensaje de error de ingreso.
 /// \param entrada Puntero a la direccion donde se requiere guardar la entrada.
 /// \return Retorna (-1) si hubo un error o (0) si esta ok.
-int getFloat(char mensaje[], char mensajeError[], float* entrada );
+int getFloat(char mensaje[], char mensajeError[], float* pEntrada );
 
 
 /// \brief Pide al usuario la entrada de un numero entero, validando que se ingrese correctamente.
@@ -40,7 +41,7 @@ int getFloat(char mensaje[], char mensajeError[], float* entrada );
 /// \param mensajeError Mensaje de error de ingreso.
 /// \param entrada Puntero a la direccion donde se requiere guardar la entrada.
 /// \return Retorna (-1) si hubo un error o (0) si esta ok.
-int getInt(char mensaje[], char mensajeError[], int* entrada);
+int getInt(char mensaje[], char mensajeError[], int* pEntrada);
 
 
 /// \brief Pide al usuario la entrada de un caracter de confirmacion( s=si, y=yes, n=no), admitiendo el ingreso de mayusculas o minisculas.
@@ -72,13 +73,11 @@ int utn_getCaracter(char* pResultado, char mensaje[], char mensajeError[], char 
 /// \return Retorna (0) si no es string sin numeros, (1) si es string sin numeros.
 int isString (char string[]);
 
-
 /// \brief Valida si entrada es un numero con punto flotante valido.
 ///
 /// \param entrada Cadena a validar
 /// \return Retorna (0) si no es string sin numeros, (1) si es string sin numeros.
 int isFloat(char entrada[]);
-
 
 /// \brief Valida si entrada es un numero entero valido.
 ///
@@ -87,7 +86,6 @@ int isFloat(char entrada[]);
 int isInt(char entrada[]);
 
 //-----------------MODIFICACION DE ENTRADAS
-
 
 /// \brief Deja o cambia todas la primer letra de cada palabras de string a mayusculas.
 ///

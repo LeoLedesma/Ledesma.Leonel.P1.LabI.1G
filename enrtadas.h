@@ -1,6 +1,0 @@
-#ifndef ENRTADAS_H_INCLUDED
-#define ENRTADAS_H_INCLUDED
-
-
-
-#endif // ENRTADAS_H_INCLUDED

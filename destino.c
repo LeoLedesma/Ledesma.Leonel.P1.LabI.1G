@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "destino.h"
 
 
@@ -24,13 +21,10 @@ int cargarDescripcionDestinos(int id, eDestino destinos[], int tamD, char descri
 	return todoOk;
 }
 
-void mostrarDestino(eDestino unDestino, eDestino destinos[], int tamD)
+void mostrarDestino(eDestino unDestino)
 {
-    char descripcionDestino[26];
 
-    cargarDescripcionDestinos(unDestino.id, destinos, tamD, descripcionDestino);
-
-	printf("%d       %-10s     %.2f  \n", unDestino.id, descripcionDestino, unDestino.precio);
+  printf("%d       %-10s     %.2f  \n", unDestino.id, unDestino.descripcion, unDestino.precio);
 
 }
 
@@ -47,7 +41,7 @@ int mostrarDestinos(eDestino destinos[], int tamD)
 
 		for(int i = 0; i<tamD; i++)
 		{
-			mostrarDestino(destinos[i], destinos, tamD);
+			mostrarDestino(destinos[i]);
 
 		}
 		todoOk = 1;
@@ -73,6 +67,29 @@ int validarIdDestino(int idRecibido, eDestino destinos[], int tamD)
     return todoOk;
 }
 
+float cargarPrecioDestino(int idDestino, eDestino destinos[], int tamD)
+{
+    float precio=-1;
+
+    if(destinos!=NULL && tamD>0 && validarIdDestino(idDestino, destinos, tamD))
+    {
+
+        for(int i = 0; i<tamD; i++)
+        {
+            if(idDestino==destinos[i].id)
+            {
+                precio=destinos[i].precio;
+            }
+
+        }
+
+
+
+    }
+
+
+    return precio;
+}
 
 
 
